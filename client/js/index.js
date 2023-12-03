@@ -707,12 +707,19 @@ sock.on('pushLocationsToTCR', data => {
     if (data.shipsLocations[targetMap].includes(targetCoord)) {
         // gDrv1 = "https://drive.google.com/file/d/1kL-6P-VordZC9O8upAx9hW_yPbXe9_BY/view?usp=sharing";
         gDrv1 = "https://drive.google.com/file/d/1HiB6sgspap8lniCqNUkzecD3LaAA_8HF/view?usp=sharing";
-        window.open(gDrv1, "_blank");
+        // window.open(gDrv1, "_blank");
 
-        // const videoDiv = document.querySelector('.video2');
-        // videoDiv.classList.add('active');
-        // const clip = document.querySelector('.clip2');
-        // clip.play();
+        const videoDiv = document.querySelector('.video2');
+        videoDiv.classList.add('active');
+        const clip = document.querySelector('.clip2');
+        clip.play();
+
+        clip.addEventListener('ended',myHandler,false);
+        function myHandler(e) {
+            clip.pause();
+            clip.currentTime = 0;
+            videoDiv.classList.remove('active');
+        }
 
         // setTimeout(() => {
         //     clip.pause();
@@ -724,11 +731,19 @@ sock.on('pushLocationsToTCR', data => {
     }else if (data.allCrates[targetMap].includes(targetCoord)) {
         // gDrv1 = "https://drive.google.com/file/d/1XyLIyCJ7eVu9cWAv2n2Eae-tTOroAsr6/view?usp=sharing";
         gDrv1 = "https://drive.google.com/file/d/1ukl6RwbxsTOPV6CWb2qYGOgDVk-HzR0l/view?usp=sharing";
-        window.open(gDrv1, "_blank");
-        // const videoDiv = document.querySelector('.video3');
-        // videoDiv.classList.add('active');
-        // const clip = document.querySelector('.clip3');
-        // clip.play();
+        // window.open(gDrv1, "_blank");
+
+        const videoDiv = document.querySelector('.video3');
+        videoDiv.classList.add('active');
+        const clip = document.querySelector('.clip3');
+        clip.play();
+
+        clip.addEventListener('ended',myHandler,false);
+        function myHandler(e) {
+            clip.pause();
+            clip.currentTime = 0;
+            videoDiv.classList.remove('active');
+        }
 
         // setTimeout(() => {
         //     clip.pause();
@@ -740,20 +755,20 @@ sock.on('pushLocationsToTCR', data => {
     } else {
         // gDrv2 = "https://drive.google.com/file/d/15KRceSBG9Z-uTgGvDym33TsKoBlIJ1TO/view?usp=sharing"
         gDrv2 = "https://drive.google.com/file/d/1iFgTNGjZqElB5vY8Ji-eB0PZOHu8m_eT/view?usp=sharing"
-        window.open(gDrv2, "_blank");
+        // window.open(gDrv2, "_blank");
 
-        // const videoDiv = document.querySelector('.video');
-        // videoDiv.classList.add('active');
-        // const clip = document.querySelector('.clip1');
-        // // clip.setAttribute('src', gDrv2);
-        // clip.play();
+        const videoDiv = document.querySelector('.video');
+        videoDiv.classList.add('active');
+        const clip = document.querySelector('.clip1');
+        // clip.setAttribute('src', gDrv2);
+        clip.play();
 
-        // clip.addEventListener('ended',myHandler,false);
-        // function myHandler(e) {
-        //     clip.pause();
-        //     clip.currentTime = 0;
-        //     videoDiv.classList.remove('active');
-        // }
+        clip.addEventListener('ended',myHandler,false);
+        function myHandler(e) {
+            clip.pause();
+            clip.currentTime = 0;
+            videoDiv.classList.remove('active');
+        }
         
         // setTimeout(() => {
             
@@ -771,7 +786,7 @@ sock.on('pushLocationsToTCR', data => {
     setTimeout(() => {
         if (nickname != "TCR") {return};
         sock.emit('updateTargetMap', { targetCoord, targetMap });
-    }, 1000);
+    }, 5000);
     
 
 });

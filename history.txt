@@ -1,5 +1,5 @@
-"Loc": {"red":[],"blue":[3]} 
- "Hits": {"red":[],"blue":[1,2]} 
- "Misses": {"red":[],"blue":[7,4,23]} 
+"Loc": {"red":[],"blue":[]} 
+ "Hits": {"red":[],"blue":[]} 
+ "Misses": {"red":[14,12,7],"blue":[]} 
  "Crates": {"red":[],"blue":[]} 
- "Found": {"red":[4],"blue":[]}
+ "Found": {"red":[],"blue":[]}
